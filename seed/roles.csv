@@ -1,0 +1,5 @@
+id,name,description,protected,permissions_csv
+role-super-admin,Super Admin,Full platform administration,true,*
+role-hr-director,HR Director,Recruiting leadership approvals and reports,false,"users.view,roles.view,settings.view,settings.edit,reports.view,reports.export,vacancies.view,vacancies.create,vacancies.edit,vacancies.edit_recruitment_details,vacancies.manage,vacancies.delete,approvals.view,approvals.decide,candidates.view,candidates.create"
+role-recruiter,Recruiter,Daily recruiting operations,false,"vacancies.view,vacancies.create,vacancies.edit,vacancies.edit_recruitment_details,candidates.view,candidates.create,approvals.view,reports.view"
+role-hiring-manager,Hiring Manager,Reviews requests and candidates,false,"vacancies.view,approvals.view,approvals.decide,candidates.view,reports.view"

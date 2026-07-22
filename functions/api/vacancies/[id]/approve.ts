@@ -1,0 +1,2 @@
+import { json, requireUser, sheet, type Env } from '../../../lib';
+export async function onRequestPost({request,env,params}:{request:Request;env:Env;params:any}){await requireUser(request,env,'approve'==='submit'?'vacancies.edit':'approvals.decide');const status='approve'==='submit'?'Pending Manager Approval':'approve'==='approve'?'Approved':'Returned for Modification';await sheet(env,'vacancies').then(s=>s.update(params.id,{status,updated_at:new Date().toISOString()}));return json({ok:true,status})}

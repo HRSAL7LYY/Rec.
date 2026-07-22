@@ -1,0 +1,1 @@
+import http from 'node:http';import fs from 'node:fs';import path from 'node:path';const root=process.argv[2]||'.';http.createServer((req,res)=>{let p=path.join(root,req.url==='/'?'index.html':req.url);fs.readFile(p,(e,d)=>{if(e){res.writeHead(404);res.end('Not found')}else{res.end(d)}})}).listen(5173,()=>console.log('Preview on http://localhost:5173'));
