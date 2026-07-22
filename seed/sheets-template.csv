@@ -1,0 +1,10 @@
+Tab,Columns
+users,"id, full_name, email, password_hash, active, created_at, updated_at, last_login_at"
+roles,"id, name, description, protected, permissions_csv"
+user_roles,"user_id, role_id"
+departments,"id, name_en, name_ar, active"
+locations,"id, name_en, name_ar, active"
+vacancies,"id, vacancy_no, role_title, department_id, location_id, status, current_stage, progress_percentage, hiring_number, owner_id, start_date, target_end_date, created_at, updated_at"
+vacancy_recruitment_details,"vacancy_id, start_date, end_date, actual_end_date, workload_planning_and_job_analysis, on_hand_number, hiring_number, company_department_strategy_json, department, location, budget_setup_amount, job_description, job_ads_writing, hiring_team_user_ids_json, selected_channels_json, updated_at, updated_by"
+candidates,"id, full_name, role_title, stage, score, source, owner_id, created_at, updated_at"
+notifications,"id, user_id, vacancy_id, message, read, created_at"

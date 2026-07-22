@@ -1,0 +1,3 @@
+import { json, readBody, requireUser, sheet, type Env } from '../lib';
+export async function onRequestGet({request,env}:{request:Request;env:Env}){await requireUser(request,env,'candidates.view');return json({candidates:await sheet(env,'candidates').then(s=>s.rows())})}
+export async function onRequestPost({request,env}:{request:Request;env:Env}){const user=await requireUser(request,env,'candidates.create');const b=await readBody(request);const item={id:crypto.randomUUID(),owner_id:user.id,created_at:new Date().toISOString(),updated_at:new Date().toISOString(),...b};await sheet(env,'candidates').then(s=>s.append(item));return json({candidate:item},201)}
